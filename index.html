@@ -1,0 +1,3105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictor Olame | Business &amp; IT Specialist</title>
+    <link rel="icon" type="image/png" href="/Dictor logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        :root {
+            --primary-red: #DC2626;
+            --primary-green: #22C55E;
+            --dark-red: #B91C1C;
+            --dark-green: #16A34A;
+            --light-bg: #f8fafc;
+            --dark-text: #1e293b;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            color: #64748b;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-red);
+            background-color: #fef2f2;
+        }
+        
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+            padding: 40px;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            padding-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-green);
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background: #e2e8f0;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .service-card {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-color: var(--primary-green);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+        
+        .hero-pattern {
+            background-color: var(--primary-red);
+            background-image: 
+                radial-gradient(circle at center, rgba(34, 197, 94, 0.3) 0%, transparent 70%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322C55E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-position: center center;
+            background-repeat: repeat;
+            background-size: 60px 60px;
+        }
+        
+        /* Admin Dashboard Styles */
+        .admin-sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #DC2626 0%, #22C55E 100%);
+            min-height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            padding-top: 40px;
+        }
+        
+        .admin-content {
+            margin-left: 280px;
+            min-height: 100vh;
+            background: #f1f5f9;
+        }
+        
+        .admin-nav-item {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 4px 12px;
+        }
+        
+        .admin-nav-item:hover, .admin-nav-item.active {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+        
+        .admin-stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .admin-table th, .admin-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .admin-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+        }
+        
+        .admin-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .badge-success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .badge-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-danger {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .badge-info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed #e2e8f0;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload-area:hover {
+            border-color: var(--primary-green);
+            background: #f0fdf4;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+
+        }
+      
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* Social Icons */
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        
+        .social-facebook { background: #1877F2; color: white; }
+        .social-linkedin { background: #0A66C2; color: white; }
+        .social-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+        .social-tiktok { background: #000000; color: white; }
+        .social-twitter { background: #1DA1F2; color: white; }
+        
+        /* Certification Card */
+        .certification-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-green);
+        }
+        
+        .certification-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .credential-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .credential-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+        }
+        
+        .detail-block {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        
+        .detail-block h4 {
+            color: var(--primary-red);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .detail-block ul {
+            list-style: disc;
+            list-style-position: inside;
+            color: #475569;
+        }
+        
+        .detail-block li {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <a href="mailto:douglasdictor409@gmail.com" class="flex items-center space-x-2 hover:text-white/80">
+                        <i class="fas fa-envelope"></i>
+                        <span>douglasdictor409@gmail.com</span>
+                    </a>
+                    <a href="tel:+254755803938" class="flex items-center space-x-2 hover:text-white/80">
+                        <i class="fas fa-phone"></i>
+                        <span>+254755803938</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="https://www.facebook.com/dictor.olame" target="_blank" class="social-icon social-facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/dictor-a-olame-5b9632275" target="_blank" class="social-icon social-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/olamedictor37/" target="_blank" class="social-icon social-instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@dictor.olame" target="_blank" class="social-icon social-tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://x.com/OlameDicto49360" target="_blank" class="social-icon social-twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-10 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img onclick="showPage('home')" src="/Dictor logo.png" alt="Logo" class="h-12 w-auto">
+                </div>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#" class="nav-link active" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-link" onclick="showPage('about')">About</a>
+                    <a href="#" class="nav-link" onclick="showPage('services')">Services</a>
+                    <a href="#" class="nav-link" onclick="showPage('portfolio')">Portfolio</a>
+                    <a href="#" class="nav-link" onclick="showPage('blog')">Blog</a>
+                    <a href="#" class="nav-link" onclick="showPage('contact')">Contact</a>
+                    <a href="#" class="nav-link" onclick="showPage('login')"><i class="fas fa-lock"></i> Admin</a>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#" class="nav-link block" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link block" onclick="showPage('about')">About</a>
+                <a href="#" class="nav-link block" onclick="showPage('services')">Services</a>
+                <a href="#" class="nav-link block" onclick="showPage('portfolio')">Portfolio</a>
+                <a href="#" class="nav-link block" onclick="showPage('blog')">Blog</a>
+                <a href="#" class="nav-link block" onclick="showPage('contact')">Contact</a>
+                <a href="#" class="nav-link block" onclick="showPage('login')"><i class="fas fa-lock"></i> Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/254755803938" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Home Page -->
+    <section id="home" class="page-section active pt-10">
+        <!-- Hero Section -->
+        <div class="gradient-bg hero-pattern min-h-screen flex items-center" id="heroSection">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-white">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Dictor <span class="text-green-200">Olame</span>
+                        </h1>
+                        <h2 class="text-xl md:text-2xl mb-4 text-green-100">
+                            Business & Information Technology Specialist
+                        </h2>
+                        <p class="text-lg mb-8 text-green-50">
+                            Education & Community Development Professional | Empowering communities through technology, innovation, and inclusive economic opportunities.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="showPage('portfolio')" class="btn-primary bg-white text-red-700">
+                                <i class="fas fa-briefcase mr-2"></i>View Portfolio
+                            </button>
+                            <button onclick="showPage('contact')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-700 transition">
+                                <i class="fas fa-envelope mr-2"></i>Contact Me
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="text-center p-4 bg-white/20 rounded-xl">
+                                    <i class="fas fa-users text-4xl mb-3"></i>
+                                    <h3 class="font-bold text-2xl">500+</h3>
+                                    <p class="text-sm">Target Youths to be Trained</p>
+                                </div>
+                                <div class="text-center p-4 bg-white/20 rounded-xl">
+                                    <i class="fas fa-briefcase text-4xl mb-3"></i>
+                                    <h3 class="font-bold text-2xl">50+</h3>
+                                    <p class="text-sm">Businesses Supported</p>
+                                </div>
+                                <div class="text-center p-4 bg-white/20 rounded-xl">
+                                    <i class="fas fa-graduation-cap text-4xl mb-3"></i>
+                                    <h3 class="font-bold text-2xl">100+</h3>
+                                    <p class="text-sm">Students Mentored</p>
+                                </div>
+                                <div class="text-center p-4 bg-white/20 rounded-xl">
+                                    <i class="fas fa-globe text-4xl mb-3"></i>
+                                    <h3 class="font-bold text-2xl">5+</h3>
+                                    <p class="text-sm">Years Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Core Competencies</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Combining expertise in Business, Information Technology, and community development to create sustainable impact.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="card p-6 text-center">
+                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-chart-line text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">Business & Entrepreneurship</h3>
+                        <p class="text-gray-600 text-sm">Community economic empowerment</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-laptop-code text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">Information Technology</h3>
+                        <p class="text-gray-600 text-sm">Data collection and analysis</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-hands-helping text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">Program Development</h3>
+                        <p class="text-gray-600 text-sm">Youth empowerment programs</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-comments text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">Communication</h3>
+                        <p class="text-gray-600 text-sm">Stakeholder engagement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page-section pt-10">
+        <div class="bg-gradient-to-b from-red-50 to-white min-h-screen py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Profile Header -->
+                <div class="text-center mb-16">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-xl bg-red-100 flex items-center justify-center">
+                        <img src="/olame.png" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                    <h1 class="text-4xl font-bold mb-4">Dictor Olame</h1>
+                    <p class="text-xl text-green-600 mb-4">Business & Information Technology Specialist | Education & Community Development Professional</p>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        📍 Kakuma, Kenya | +254 755 803 938 | ✉ douglasdictor409@gmail.com
+                    </p>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="card p-8 mb-12">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-user-tie text-green-600 mr-3"></i>
+                        Professional Summary
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Results-driven professional with expertise in Business, Information Technology, and community development, combined with practical experience in education and humanitarian programs. Skilled in using technology, digital tools, and data-driven approaches to improve program effectiveness, community engagement, and economic empowerment. Experienced in supporting youth, refugees, and vulnerable populations through inclusive education, entrepreneurship training, and digital literacy initiatives. Strong background in communications, research, and program facilitation, with the ability to work collaboratively in multicultural and humanitarian environments. Committed to advancing sustainable development through technology, innovation, and inclusive economic opportunities.
+                    </p>
+                </div>
+
+                <!-- Experience Timeline -->
+                <div class="grid md:grid-cols-2 gap-12 mb-12">
+                    <div class="card p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-briefcase text-green-600 mr-3"></i>
+                            Professional Experience
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="timeline-item">
+                                <h3 class="font-bold text-lg">Business and Entrepreneurship Facilitator</h3>
+                                <p class="text-green-600 font-medium">Resilience Action International</p>
+                                <p class="text-gray-500 text-sm">2025 – Present</p>
+                                <ul class="mt-3 text-gray-600 space-y-2">
+                                    <li>• Facilitate entrepreneurship training programs for youth and refugee entrepreneurs to support economic empowerment</li>
+                                    <li>• Guide participants in developing business ideas, business plans, and financial sustainability strategies</li>
+                                    <li>• Support small business development through mentorship, coaching, and practical skills training</li>
+                                    <li>• Assist participants in improving financial literacy, market analysis, and business management skills</li>
+                                    <li>• Collaborate with program teams to strengthen livelihood programs and community resilience initiatives</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h3 class="font-bold text-lg">Special Needs Specialist</h3>
+                                <p class="text-green-600 font-medium">Humanity & Inclusion</p>
+                                <p class="text-gray-500 text-sm">June 2024 – December 2025</p>
+                                <ul class="mt-3 text-gray-600 space-y-2">
+                                    <li>• Provided academic and psychosocial support to learners with disabilities and diverse learning needs</li>
+                                    <li>• Promoted inclusive access to STEM education and digital literacy programs</li>
+                                    <li>• Adapted teaching materials and digital resources to support accessible learning</li>
+                                    <li>• Collaborated with educators to monitor student progress and implement inclusive teaching strategies</li>
+                                    <li>• Fostered a supportive and inclusive learning environment that encouraged student confidence and participation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-graduation-cap text-green-600 mr-3"></i>
+                            Education
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="timeline-item">
+                                <h3 class="font-bold text-lg">Bachelor of Arts in General Studies and Information Systems (Ongoing)</h3>
+                                <p class="text-green-600 font-medium">Saint Louis University, Missouri (Online)</p>
+                                <p class="text-gray-500 text-sm">March 2025 – Expected March 2028</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h3 class="font-bold text-lg">Certificate in IT in Business</h3>
+                                <p class="text-green-600 font-medium">Don Bosco Technical Institute</p>
+                                <p class="text-gray-500 text-sm">January - August 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="card p-8 mb-12">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-code text-green-600 mr-3"></i>
+                        Technical & Professional Skills
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg mb-4">Information Technology</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>R Programming</span>
+                                        <span class="text-gray-500">85%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>SurveyCTO</span>
+                                        <span class="text-gray-500">90%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Kobo Collect</span>
+                                        <span class="text-gray-500">90%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Data Collection & Analysis</span>
+                                        <span class="text-gray-500">88%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 88%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-4">Software & Tools</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Microsoft Office Suite</span>
+                                        <span class="text-gray-500">95%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>GitHub</span>
+                                        <span class="text-gray-500">75%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Visual Studio</span>
+                                        <span class="text-gray-500">80%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Basic Web Development</span>
+                                        <span class="text-gray-500">70%</span>
+                                    </div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="card p-8 mb-12">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-trophy text-green-600 mr-3"></i>
+                        Key Achievements
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Entrepreneurship Training</h3>
+                                <p class="text-gray-600">Delivered entrepreneurship training that supports economic empowerment of youth and refugees.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check-circle text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Inclusive Education</h3>
+                                <p class="text-gray-600">Contributed to inclusive education programs that improved access to STEM learning for students with disabilities.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Community Awareness</h3>
+                                <p class="text-gray-600">Supported communication campaigns that increased community awareness and participation in youth programs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check-circle text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Digital Data Collection</h3>
+                                <p class="text-gray-600">Applied digital data collection tools to improve information gathering and program support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Licenses & Certifications -->
+                <div class="card p-8">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-certificate text-green-600 mr-3"></i>
+                        Licenses & Certifications
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6" id="certificationsGrid">
+                        <!-- Certifications will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page -->
+    <section id="services" class="page-section pt-10">
+        <div class="bg-gradient-to-b from-green-50 to-white min-h-screen py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold mb-4">My Services</h1>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Comprehensive solutions combining business expertise, technology, and community development to create sustainable impact.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid" id="servicesGrid">
+                    <!-- Services will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Page -->
+    <section id="portfolio" class="page-section pt-10">
+        <div class="bg-gradient-to-b from-red-50 to-white min-h-screen py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold mb-4">Portfolio</h1>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        A showcase of projects and initiatives that demonstrate my expertise in business, technology, and community development.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- Portfolio items will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Page -->
+    <section id="blog" class="page-section pt-10">
+        <div class="bg-gradient-to-b from-green-50 to-white min-h-screen py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold mb-4">Blog & Insights</h1>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Thoughts, insights, and updates on business, technology, and community development by Dictor Olame.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid" id="blogGrid">
+                    <!-- Blog posts will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-section pt-10">
+        <div class="bg-gradient-to-b from-red-50 to-white min-h-screen py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold mb-4">Get In Touch</h1>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Ready to collaborate on projects that create sustainable impact? Let's connect and discuss how we can work together.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="card p-8">
+                        <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Location</h3>
+                                    <p class="text-gray-600">Kakuma, Kenya</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Phone</h3>
+                                    <p class="text-gray-600">+254 755 803 938</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Email</h3>
+                                    <p class="text-gray-600">douglasdictor409@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-globe text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Languages</h3>
+                                    <p class="text-gray-600">English – Professional proficiency with B2 of Duolingo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t">
+                            <h3 class="font-bold mb-4">Professional References</h3>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <p class="font-semibold">Mzungu Mercel Rutugiza</p>
+                                    <p class="text-gray-600 text-sm">Supervisor, Humanity & Inclusion</p>
+                                    <p class="text-gray-500 text-sm">+254 282 816 73</p>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <p class="font-semibold">Dr. Eboni Chism</p>
+                                    <p class="text-gray-600 text-sm">Student Advisor, Saint Louis University</p>
+                                    <p class="text-gray-500 text-sm">eboni.chism@slu.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="card p-8">
+                        <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
+                        <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="contactName" class="input-field" required placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="contactEmail" class="input-field" required placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="contactSubject" class="input-field" required placeholder="Message subject">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea id="contactMessage" class="input-field" rows="5" required placeholder="Your message..."></textarea>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="subscribeCheckbox" class="mr-2">
+                                <label for="subscribeCheckbox" class="text-sm text-gray-600">Subscribe to newsletter for updates</label>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Page -->
+    <section id="login" class="page-section pt-10">
+        <div class="gradient-bg min-h-screen flex items-center justify-center py-20">
+            <div class="max-w-md mx-auto px-4">
+                <div class="card p-8">
+                    <div class="text-center mb-8">
+                        <img src="/Dictor logo.png" alt="Logo" class="h-16 w-16 mx-auto mb-4">
+                        <h2 class="text-2xl font-bold">Admin Login</h2>
+                        <p class="text-gray-600">Access portfolio management system</p>
+                    </div>
+                    <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                            <div class="relative">
+                                <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                <input type="text" id="username" class="input-field pl-12" required placeholder="Enter username">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                <input type="password" id="password" class="input-field pl-12" required placeholder="Enter password">
+                            </div>
+                        </div>
+                        <div id="loginError" class="hidden p-4 bg-red-100 text-red-700 rounded-lg text-sm">
+                            Invalid username or password. Please try again.
+                        </div>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login
+                        </button>
+                    </form>
+                    <div class="mt-6 text-center">
+                        <a href="#" onclick="showPage('home')" class="text-green-600 hover:text-green-800 text-sm">
+                            <i class="fas fa-arrow-left mr-2"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section id="adminDashboard" class="page-section pt-0">
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="admin-sidebar">
+                <div class="p-6 border-b border-white/20">
+                    <div class="flex items-center space-x-3">
+                        <img src="/Dictor logo.png" alt="Logo" class="h-10 w-10">
+                        <div>
+                            <h3 class="text-white font-bold">Admin Panel</h3>
+                            <p class="text-white/70 text-sm">Dictor Olame</p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="p-4">
+                    <a href="#" class="admin-nav-item active" onclick="showAdminPage('dashboard')">
+                        <i class="fas fa-home w-5"></i> Dashboard
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('services')">
+                        <i class="fas fa-briefcase w-5"></i> Services
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('portfolio')">
+                        <i class="fas fa-folder-open w-5"></i> Portfolio
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('blog')">
+                        <i class="fas fa-newspaper w-5"></i> Blog Posts
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('certifications')">
+                        <i class="fas fa-certificate w-5"></i> Certifications
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('messages')">
+                        <i class="fas fa-envelope w-5"></i> Messages
+                        <span id="messageBadge" class="ml-auto bg-white text-red-600 text-xs px-2 py-1 rounded-full">0</span>
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('subscribers')">
+                        <i class="fas fa-users w-5"></i> Subscribers
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('users')">
+                        <i class="fas fa-user-shield w-5"></i> Users
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="showAdminPage('settings')">
+                        <i class="fas fa-cog w-5"></i> Settings
+                    </a>
+                    <a href="#" class="admin-nav-item" onclick="handleLogout()">
+                        <i class="fas fa-sign-out-alt w-5"></i> Logout
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Admin Content -->
+            <div class="admin-content flex-1">
+                <!-- Top Bar -->
+                <div class="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
+                    <h2 id="adminPageTitle" class="text-xl font-bold text-gray-800">Dashboard</h2>
+                    <div class="flex items-center space-x-4">
+                        <button onclick="showPage('home')" class="text-gray-600 hover:text-green-600">
+                            <i class="fas fa-external-link-alt"></i> View Site
+                        </button>
+                        <div class="flex items-center space-x-2">
+                            <img src="/Dictor logo.png" alt="Admin" class="h-8 w-8 rounded-full">
+                            <span class="font-medium">Admin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Content -->
+                <div class="p-6">
+                    <!-- Dashboard Overview -->
+                    <div id="adminDashboardContent" class="admin-page-content">
+                        <div class="grid md:grid-cols-4 gap-6 mb-8">
+                            <div class="admin-stat-card">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-gray-500 text-sm">Services</p>
+                                        <p class="text-3xl font-bold text-red-600" id="statServices">0</p>
+                                    </div>
+                                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-briefcase text-red-600 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-stat-card">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-gray-500 text-sm">Portfolio</p>
+                                        <p class="text-3xl font-bold text-green-600" id="statPortfolio">0</p>
+                                    </div>
+                                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-folder-open text-green-600 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-stat-card">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-gray-500 text-sm">Certifications</p>
+                                        <p class="text-3xl font-bold text-red-600" id="statCertifications">0</p>
+                                    </div>
+                                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-certificate text-red-600 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-stat-card">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-gray-500 text-sm">Messages</p>
+                                        <p class="text-3xl font-bold text-green-600" id="statMessages">0</p>
+                                    </div>
+                                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-envelope text-green-600 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="card p-6">
+                                <h3 class="font-bold text-lg mb-4">Recent Messages</h3>
+                                <div id="recentMessages" class="space-y-3"></div>
+                            </div>
+                            <div class="card p-6">
+                                <h3 class="font-bold text-lg mb-4">Quick Actions</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <button onclick="showAdminPage('services'); openServiceModal()" class="p-4 bg-red-50 rounded-lg hover:bg-red-100 transition text-center">
+                                        <i class="fas fa-plus text-red-600 text-2xl mb-2"></i>
+                                        <p class="text-sm font-medium">Add Service</p>
+                                    </button>
+                                    <button onclick="showAdminPage('portfolio'); openPortfolioModal()" class="p-4 bg-green-50 rounded-lg hover:bg-green-100 transition text-center">
+                                        <i class="fas fa-plus text-green-600 text-2xl mb-2"></i>
+                                        <p class="text-sm font-medium">Add Portfolio</p>
+                                    </button>
+                                    <button onclick="showAdminPage('certifications'); openCertificationModal()" class="p-4 bg-red-50 rounded-lg hover:bg-red-100 transition text-center">
+                                        <i class="fas fa-plus text-red-600 text-2xl mb-2"></i>
+                                        <p class="text-sm font-medium">Add Certification</p>
+                                    </button>
+                                    <button onclick="showAdminPage('subscribers')" class="p-4 bg-green-50 rounded-lg hover:bg-green-100 transition text-center">
+                                        <i class="fas fa-download text-green-600 text-2xl mb-2"></i>
+                                        <p class="text-sm font-medium">Export CSV</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Management -->
+                    <div id="adminServicesContent" class="admin-page-content hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-lg">Manage Services</h3>
+                            <button onclick="openServiceModal()" class="btn-primary">
+                                <i class="fas fa-plus mr-2"></i>Add Service
+                            </button>
+                        </div>
+                        <div class="card overflow-hidden">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Category</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="servicesTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Management -->
+                    <div id="adminPortfolioContent" class="admin-page-content hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-lg">Manage Portfolio</h3>
+                            <button onclick="openPortfolioModal()" class="btn-primary">
+                                <i class="fas fa-plus mr-2"></i>Add Portfolio
+                            </button>
+                        </div>
+                        <div class="card overflow-hidden">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Category</th>
+                                        <th>Year</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="portfolioTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Management -->
+                    <div id="adminCertificationsContent" class="admin-page-content hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-lg">Manage Certifications</h3>
+                            <button onclick="openCertificationModal()" class="btn-primary">
+                                <i class="fas fa-plus mr-2"></i>Add Certification
+                            </button>
+                        </div>
+                        <div class="card overflow-hidden">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Issuer</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="certificationsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Blog Management -->
+                    <div id="adminBlogContent" class="admin-page-content hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-lg">Manage Blog Posts</h3>
+                            <button onclick="openBlogModal()" class="btn-primary">
+                                <i class="fas fa-plus mr-2"></i>Add Post
+                            </button>
+                        </div>
+                        <div class="card overflow-hidden">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Category</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="blogTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Messages -->
+                    <div id="adminMessagesContent" class="admin-page-content hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-lg">Contact Messages</h3>
+                            <button onclick="exportMessagesCSV()" class="btn-primary">
+                                <i class="fas fa-download mr-2"></i>Export CSV
+                            </button>
+                        </div>
+                        <div class="card overflow-hidden">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Subject</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="messagesTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Subscribers -->
+                    <div id="adminSubscribersContent" class="admin-page-content hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-lg">Email Subscribers</h3>
+                            <button onclick="exportSubscribersCSV()" class="btn-primary">
+                                <i class="fas fa-download mr-2"></i>Export CSV
+                            </button>
+                        </div>
+                        <div class="card overflow-hidden">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Subscribed Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="subscribersTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Users Management -->
+                    <div id="adminUsersContent" class="admin-page-content hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-lg">Manage Users</h3>
+                            <button onclick="openUserModal()" class="btn-primary">
+                                <i class="fas fa-user-plus mr-2"></i>Add User
+                            </button>
+                        </div>
+                        <div class="card overflow-hidden">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Role</th>
+                                        <th>Email</th>
+                                        <th>Created</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Settings -->
+                    <div id="adminSettingsContent" class="admin-page-content hidden">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="card p-6">
+                                <h3 class="font-bold text-lg mb-4">Site Settings</h3>
+                                <form onsubmit="saveSettings(event)" class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Site Title</label>
+                                        <input type="text" id="settingSiteTitle" class="input-field" value="Dictor Olame Portfolio">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Hero Image URL</label>
+                                        <input type="text" id="settingHeroImage" class="input-field" placeholder="Enter image URL">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Primary Color</label>
+                                        <input type="color" id="settingPrimaryColor" class="input-field h-12" value="#DC2626">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Contact Email</label>
+                                        <input type="email" id="settingContactEmail" class="input-field" value="douglasdictor409@gmail.com">
+                                    </div>
+                                    <button type="submit" class="btn-primary w-full">Save Settings</button>
+                                </form>
+                            </div>
+                            <div class="card p-6">
+                                <h3 class="font-bold text-lg mb-4">Hero Image Upload</h3>
+                                <div class="file-upload-area" onclick="document.getElementById('heroImageUpload').click()">
+                                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                                    <p class="text-gray-600">Click to upload hero image</p>
+                                    <p class="text-gray-400 text-sm mt-2">PNG, JPG up to 5MB</p>
+                                    <input type="file" id="heroImageUpload" class="hidden" accept="image/*" onchange="handleHeroImageUpload(event)">
+                                </div>
+                                <div id="heroImagePreview" class="mt-4 hidden">
+                                    <img id="heroImagePreviewImg" src="" alt="Preview" class="w-full rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Detail Modal -->
+    <div id="serviceDetailModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="serviceDetailTitle" class="text-3xl font-bold"></h2>
+                <button onclick="closeServiceDetailModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="serviceDetailContent" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <!-- Portfolio Detail Modal -->
+    <div id="portfolioDetailModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="portfolioDetailTitle" class="text-3xl font-bold"></h2>
+                <button onclick="closePortfolioDetailModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="portfolioDetailContent" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="serviceModalTitle" class="text-2xl font-bold">Add Service</h2>
+                <button onclick="closeServiceModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="serviceForm" onsubmit="saveService(event)" class="space-y-4">
+                <input type="hidden" id="serviceId">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Service Title</label>
+                    <input type="text" id="serviceTitle" class="input-field" required placeholder="e.g., Entrepreneurship Training">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Icon Class</label>
+                    <input type="text" id="serviceIcon" class="input-field" placeholder="e.g., fas fa-lightbulb">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select id="serviceCategory" class="input-field">
+                        <option value="Business">Business</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Community">Community</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                    <textarea id="serviceDescription" class="input-field" rows="4" required placeholder="Service description..."></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Detailed Content</label>
+                    <textarea id="serviceContent" class="input-field" rows="6" required placeholder="Detailed explanation..."></textarea>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="btn-primary flex-1">Save Service</button>
+                    <button type="button" onclick="closeServiceModal()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="portfolioModalTitle" class="text-2xl font-bold">Add Portfolio</h2>
+                <button onclick="closePortfolioModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="portfolioForm" onsubmit="savePortfolio(event)" class="space-y-4">
+                <input type="hidden" id="portfolioId">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Project Title</label>
+                    <input type="text" id="portfolioTitle" class="input-field" required placeholder="e.g., Youth Entrepreneurship Program">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select id="portfolioCategory" class="input-field">
+                        <option value="Entrepreneurship">Entrepreneurship</option>
+                        <option value="Data Analysis">Data Analysis</option>
+                        <option value="Education">Education</option>
+                        <option value="Community">Community</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Business">Business</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Year</label>
+                    <input type="text" id="portfolioYear" class="input-field" required placeholder="e.g., 2025">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Organization</label>
+                    <input type="text" id="portfolioOrganization" class="input-field" placeholder="e.g., Resilience Action International">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Short Description</label>
+                    <textarea id="portfolioDescription" class="input-field" rows="3" required placeholder="Brief project description..."></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Detailed Content</label>
+                    <textarea id="portfolioContent" class="input-field" rows="6" required placeholder="Full project details..."></textarea>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="btn-primary flex-1">Save Portfolio</button>
+                    <button type="button" onclick="closePortfolioModal()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Certification Modal -->
+    <div id="certificationModal" class="modal">
+        <div class="modal-content p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="certificationModalTitle" class="text-2xl font-bold">Add Certification</h2>
+                <button onclick="closeCertificationModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="certificationForm" onsubmit="saveCertification(event)" class="space-y-4">
+                <input type="hidden" id="certificationId">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Certification Title</label>
+                    <input type="text" id="certificationTitle" class="input-field" required placeholder="e.g., Certificate in IT in Business">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Issuing Organization</label>
+                    <input type="text" id="certificationIssuer" class="input-field" required placeholder="e.g., Don Bosco Technical Institute">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Issue Date</label>
+                    <input type="text" id="certificationDate" class="input-field" required placeholder="e.g., January - August 2023">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Skills Earned (comma separated)</label>
+                    <input type="text" id="certificationSkills" class="input-field" required placeholder="e.g., Business Information Systems, IT Management">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Credential ID</label>
+                    <input type="text" id="certificationCredentialId" class="input-field" placeholder="e.g., DBTI-ITB-2023-001">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Credential URL (optional)</label>
+                    <input type="url" id="certificationCredentialUrl" class="input-field" placeholder="https://...">
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="btn-primary flex-1">Save Certification</button>
+                    <button type="button" onclick="closeCertificationModal()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="blogModalTitle" class="text-2xl font-bold">Add Blog Post</h2>
+                <button onclick="closeBlogModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="blogForm" onsubmit="saveBlog(event)" class="space-y-4">
+                <input type="hidden" id="blogId">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Post Title</label>
+                    <input type="text" id="blogTitle" class="input-field" required placeholder="e.g., Empowering Youth Through Technology">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Author</label>
+                    <input type="text" id="blogAuthor" class="input-field" value="Dictor Olame" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select id="blogCategory" class="input-field">
+                        <option value="Technology">Technology</option>
+                        <option value="Business">Business</option>
+                        <option value="Community">Community</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Excerpt</label>
+                    <textarea id="blogExcerpt" class="input-field" rows="3" required placeholder="Short excerpt for preview..."></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Content</label>
+                    <textarea id="blogContent" class="input-field" rows="8" required placeholder="Full blog post content..."></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                    <select id="blogStatus" class="input-field">
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
+                    </select>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="btn-primary flex-1">Save Post</button>
+                    <button type="button" onclick="closeBlogModal()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="userModal" class="modal">
+        <div class="modal-content p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="userModalTitle" class="text-2xl font-bold">Add User</h2>
+                <button onclick="closeUserModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="userForm" onsubmit="saveUser(event)" class="space-y-4">
+                <input type="hidden" id="userId">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                    <input type="text" id="userUsername" class="input-field" required placeholder="Enter username">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <input type="password" id="userPassword" class="input-field" placeholder="Enter password">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="userEmail" class="input-field" required placeholder="Enter email">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Role</label>
+                    <select id="userRole" class="input-field">
+                        <option value="admin">Admin</option>
+                        <option value="editor">Editor</option>
+                        <option value="author">Author</option>
+                    </select>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="btn-primary flex-1">Save User</button>
+                    <button type="button" onclick="closeUserModal()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Message View Modal -->
+    <div id="messageViewModal" class="modal">
+        <div class="modal-content p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Message Details</h2>
+                <button onclick="closeMessageViewModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="messageViewContent" class="space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- Credential View Modal -->
+    <div id="credentialModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Credential Details</h2>
+                <button onclick="closeCredentialModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="credentialContent" class="space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/Dictor logo.png" alt="Logo" class="h-12 w-auto">
+                    </div>
+                    <p class="text-gray-400">
+                        Business & Information Technology Specialist committed to advancing sustainable development through technology, innovation, and inclusive economic opportunities.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="showPage('home')" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" onclick="showPage('about')" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#" onclick="showPage('portfolio')" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#" onclick="showPage('blog')" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Connect</h3>
+                    <div class="flex space-x-3">
+                        <a href="https://www.facebook.com/dictor.olame" target="_blank" class="social-icon social-facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/dictor-a-olame-5b9632275/" target="_blank" class="social-icon social-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/olamedictor37/" target="_blank" class="social-icon social-instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@dictor.olame" target="_blank" class="social-icon social-tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://x.com/OlameDicto49360" target="_blank" class="social-icon social-twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Newsletter</h3>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe to get updates on my latest projects and insights.</p>
+                    <form onsubmit="subscribeNewsletter(event)" class="space-y-2">
+                        <input type="email" id="newsletterEmail" class="input-field" placeholder="Your email address" required>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="currentYear"></span> Dictor Olame. All rights reserved. | Design.Inspire.Transform</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Certifications Data from CV
+        let certifications = JSON.parse(localStorage.getItem('certifications')) || [
+            {
+                id: 1,
+                title: 'Certificate in IT in Business',
+                issuer: 'Don Bosco Technical Institute',
+                date: 'January - August 2023',
+                skills: ['Business Information Systems', 'IT Management', 'Digital Tools', 'Business Analysis'],
+                credentialId: 'DBTI-ITB-2023-001',
+                credentialUrl: '#'
+            },
+            {
+                id: 2,
+                title: 'Bachelor of Arts in General Studies and Information Systems',
+                issuer: 'Saint Louis University, Missouri (Online)',
+                date: 'March 2025 – Expected March 2028',
+                skills: ['Information Systems', 'Business Studies', 'Data Management', 'Technology Integration'],
+                credentialId: 'SLU-GSIS-2025-ONGOING',
+                credentialUrl: '#'
+            },
+            {
+                id: 3,
+                title: 'English Language Proficiency',
+                issuer: 'Duolingo English Test',
+                date: '2024',
+                skills: ['Professional English', 'Business Communication', 'Technical Writing', 'Cross-cultural Communication'],
+                credentialId: 'DET-B2-2024',
+                credentialUrl: '#'
+            },
+            {
+                id: 4,
+                title: 'Data Collection & Analysis Certification',
+                issuer: 'Professional Development',
+                date: '2024',
+                skills: ['SurveyCTO', 'Kobo Collect', 'R Programming', 'Data Analysis'],
+                credentialId: 'DCA-2024-001',
+                credentialUrl: '#'
+            }
+        ];
+
+        // Data Storage
+        let services = JSON.parse(localStorage.getItem('services')) || [
+            { 
+                id: 1, 
+                title: 'Business & Entrepreneurship Training', 
+                icon: 'fas fa-lightbulb', 
+                category: 'Business', 
+                description: 'Comprehensive business development programs for youth and refugee entrepreneurs to support economic empowerment.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Service Overview</h4>
+                        <p>Facilitate entrepreneurship training programs for youth and refugee entrepreneurs to support economic empowerment. Guide participants in developing business ideas, business plans, and financial sustainability strategies.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Key Activities</h4>
+                        <ul>
+                            <li>Support small business development through mentorship, coaching, and practical skills training</li>
+                            <li>Assist participants in improving financial literacy, market analysis, and business management skills</li>
+                            <li>Collaborate with program teams to strengthen livelihood programs and community resilience initiatives</li>
+                            <li>Deliver comprehensive entrepreneurship training workshops</li>
+                            <li>Provide ongoing business mentorship and coaching</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-chart-line mr-2"></i>Expected Outcomes</h4>
+                        <ul>
+                            <li>Improved business management skills</li>
+                            <li>Enhanced financial literacy</li>
+                            <li>Sustainable business ventures</li>
+                            <li>Economic empowerment of participants</li>
+                        </ul>
+                    </div>
+                `
+            },
+            { 
+                id: 2, 
+                title: 'Information Technology Solutions', 
+                icon: 'fas fa-laptop-code', 
+                category: 'Technology', 
+                description: 'Professional data collection, analysis, and digital systems management using industry-standard tools.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Service Overview</h4>
+                        <p>Skilled in using technology, digital tools, and data-driven approaches to improve program effectiveness, community engagement, and economic empowerment. Expert in data collection and analysis using modern tools.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tools mr-2"></i>Technical Skills</h4>
+                        <ul>
+                            <li>R Programming for statistical analysis</li>
+                            <li>SurveyCTO for mobile data collection</li>
+                            <li>Kobo Collect for field data gathering</li>
+                            <li>Microsoft Office Suite for productivity</li>
+                            <li>GitHub for version control</li>
+                            <li>Visual Studio for development</li>
+                            <li>Basic web development</li>
+                            <li>Cybersecurity fundamentals</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-check-circle mr-2"></i>Applications</h4>
+                        <ul>
+                            <li>Program monitoring and evaluation</li>
+                            <li>Research and data management</li>
+                            <li>Digital systems and information management</li>
+                            <li>Data-driven decision making</li>
+                        </ul>
+                    </div>
+                `
+            },
+            { 
+                id: 3, 
+                title: 'Program & Community Development', 
+                icon: 'fas fa-hands-helping', 
+                category: 'Community', 
+                description: 'Youth empowerment programs, inclusive education support, and refugee community engagement initiatives.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Service Overview</h4>
+                        <p>Experienced in supporting youth, refugees, and vulnerable populations through inclusive education, entrepreneurship training, and digital literacy initiatives. Committed to advancing sustainable development through technology, innovation, and inclusive economic opportunities.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Key Focus Areas</h4>
+                        <ul>
+                            <li>Youth empowerment programs</li>
+                            <li>Inclusive education support</li>
+                            <li>Refugee community engagement</li>
+                            <li>Community economic empowerment</li>
+                            <li>Stakeholder communication</li>
+                            <li>Community outreach and engagement</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-award mr-2"></i>Key Achievements</h4>
+                        <ul>
+                            <li>Delivered entrepreneurship training supporting economic empowerment of youth and refugees</li>
+                            <li>Contributed to inclusive education programs improving access to STEM learning</li>
+                            <li>Supported communication campaigns increasing community awareness</li>
+                            <li>Applied digital data collection tools to improve information gathering</li>
+                        </ul>
+                    </div>
+                `
+            },
+            { 
+                id: 4, 
+                title: 'Communication & Collaboration', 
+                icon: 'fas fa-comments', 
+                category: 'Business', 
+                description: 'Stakeholder communication, community outreach, social media management, and cross-cultural teamwork.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Service Overview</h4>
+                        <p>Strong background in communications, research, and program facilitation, with the ability to work collaboratively in multicultural and humanitarian environments. Experienced in stakeholder engagement and community outreach.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Core Competencies</h4>
+                        <ul>
+                            <li>Stakeholder communication</li>
+                            <li>Community outreach and engagement</li>
+                            <li>Social media and digital communications</li>
+                            <li>Cross-cultural teamwork</li>
+                            <li>Interpersonal communication</li>
+                            <li>Research and data management</li>
+                            <li>Time management</li>
+                            <li>Problem solving</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-language mr-2"></i>Language Proficiency</h4>
+                        <p>English – Professional proficiency with B2 of Duolingo, enabling effective communication in international and multicultural settings.</p>
+                    </div>
+                `
+            },
+            { 
+                id: 5, 
+                title: 'Inclusive Education Support', 
+                icon: 'fas fa-chalkboard-teacher', 
+                category: 'Education', 
+                description: 'Academic and psychosocial support for learners with disabilities, promoting inclusive access to STEM education.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Service Overview</h4>
+                        <p>Provided academic and psychosocial support to learners with disabilities and diverse learning needs. Promoted inclusive access to STEM education and digital literacy programs with adapted teaching materials.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Key Services</h4>
+                        <ul>
+                            <li>Academic and psychosocial support to learners with disabilities</li>
+                            <li>Promote inclusive access to STEM education and digital literacy programs</li>
+                            <li>Adapt teaching materials and digital resources to support accessible learning</li>
+                            <li>Collaborate with educators to monitor student progress</li>
+                            <li>Implement inclusive teaching strategies</li>
+                            <li>Foster supportive and inclusive learning environments</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-heart mr-2"></i>Impact</h4>
+                        <p>Encouraged student confidence and participation through supportive learning environments, improving access to quality education for marginalized learners.</p>
+                    </div>
+                `
+            },
+            { 
+                id: 6, 
+                title: 'Digital Literacy & Training', 
+                icon: 'fas fa-laptop', 
+                category: 'Education', 
+                description: 'Technology training and digital skills development for students and community members.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Service Overview</h4>
+                        <p>Skilled in using technology and digital tools to improve program effectiveness and community engagement. Experienced in delivering digital literacy initiatives to diverse populations.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Training Areas</h4>
+                        <ul>
+                            <li>Basic web development fundamentals</li>
+                            <li>Cybersecurity awareness and best practices</li>
+                            <li>Digital systems and information management</li>
+                            <li>Microsoft Office Suite proficiency</li>
+                            <li>Data collection tools (SurveyCTO, Kobo Collect)</li>
+                            <li>R Programming for data analysis</li>
+                            <li>GitHub version control</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-users mr-2"></i>Target Audience</h4>
+                        <p>Youth, refugees, community members, and organizations seeking to improve their digital capabilities and technology adoption.</p>
+                    </div>
+                `
+            }
+        ];
+
+        let portfolio = JSON.parse(localStorage.getItem('portfolio')) || [
+            { 
+                id: 1, 
+                title: 'Youth Entrepreneurship Training Program', 
+                category: 'Entrepreneurship', 
+                year: '2025 – Present', 
+                organization: 'Resilience Action International',
+                description: 'Facilitate entrepreneurship training programs for youth and refugee entrepreneurs to support economic empowerment.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-building mr-2"></i>Organization</h4>
+                        <p>Resilience Action International | 2025 – Present</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Project Overview</h4>
+                        <p>Facilitate entrepreneurship training programs for youth and refugee entrepreneurs to support economic empowerment in Kakuma, Kenya. This initiative aims to create sustainable livelihood opportunities through business development support.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Key Responsibilities</h4>
+                        <ul>
+                            <li>Facilitate entrepreneurship training programs for youth and refugee entrepreneurs</li>
+                            <li>Guide participants in developing business ideas, business plans, and financial sustainability strategies</li>
+                            <li>Support small business development through mentorship, coaching, and practical skills training</li>
+                            <li>Assist participants in improving financial literacy, market analysis, and business management skills</li>
+                            <li>Collaborate with program teams to strengthen livelihood programs and community resilience initiatives</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-chart-line mr-2"></i>Impact</h4>
+                        <p>Supporting economic empowerment of youth and refugees through comprehensive business training and ongoing mentorship, contributing to community resilience and sustainable development.</p>
+                    </div>
+                `
+            },
+            { 
+                id: 2, 
+                title: 'Inclusive STEM Education Initiative', 
+                category: 'Education', 
+                year: 'June 2024 – December 2025', 
+                organization: 'Humanity & Inclusion',
+                description: 'Provided academic and psychosocial support to learners with disabilities and diverse learning needs.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-building mr-2"></i>Organization</h4>
+                        <p>Humanity & Inclusion | June 2024 – December 2025</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Project Overview</h4>
+                        <p>Promoted inclusive access to STEM education and digital literacy programs for learners with disabilities and diverse learning needs in Kakuma refugee camp.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Key Responsibilities</h4>
+                        <ul>
+                            <li>Provided academic and psychosocial support to learners with disabilities and diverse learning needs</li>
+                            <li>Promoted inclusive access to STEM education and digital literacy programs</li>
+                            <li>Adapted teaching materials and digital resources to support accessible learning</li>
+                            <li>Collaborated with educators to monitor student progress and implement inclusive teaching strategies</li>
+                            <li>Fostered a supportive and inclusive learning environment that encouraged student confidence and participation</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-award mr-2"></i>Impact</h4>
+                        <p>Contributed to inclusive education programs that improved access to STEM learning for students with disabilities, creating more equitable educational opportunities.</p>
+                    </div>
+                `
+            },
+            { 
+                id: 3, 
+                title: 'Digital Data Collection System Implementation', 
+                category: 'Technology', 
+                year: '2024', 
+                organization: 'Professional Project',
+                description: 'Applied digital data collection tools to improve information gathering and program support.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Project Overview</h4>
+                        <p>Implementation of digital data collection systems using SurveyCTO and Kobo Collect to improve information gathering and program support for humanitarian and development initiatives.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tools mr-2"></i>Tools & Technologies</h4>
+                        <ul>
+                            <li>SurveyCTO for mobile data collection</li>
+                            <li>Kobo Collect for field data gathering</li>
+                            <li>R Programming for data analysis</li>
+                            <li>Microsoft Office Suite for reporting</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-check-circle mr-2"></i>Outcomes</h4>
+                        <ul>
+                            <li>Improved data quality and accuracy</li>
+                            <li>Enhanced program monitoring capabilities</li>
+                            <li>Better informed decision-making</li>
+                            <li>Increased efficiency in data collection processes</li>
+                        </ul>
+                    </div>
+                `
+            },
+            { 
+                id: 4, 
+                title: 'Community Awareness Campaign', 
+                category: 'Community', 
+                year: '2024', 
+                organization: 'Community Initiative',
+                description: 'Supported communication campaigns that increased community awareness and participation in youth programs.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Project Overview</h4>
+                        <p>Supported communication campaigns that increased community awareness and participation in youth programs through strategic stakeholder engagement and community outreach.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Key Activities</h4>
+                        <ul>
+                            <li>Stakeholder communication and engagement</li>
+                            <li>Community outreach and mobilization</li>
+                            <li>Social media and digital communications</li>
+                            <li>Cross-cultural teamwork and collaboration</li>
+                            <li>Research and data management for campaign evaluation</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-chart-line mr-2"></i>Results</h4>
+                        <p>Increased community awareness and participation in youth programs, strengthening community engagement and program effectiveness.</p>
+                    </div>
+                `
+            },
+            { 
+                id: 5, 
+                title: 'Business Development Mentorship Program', 
+                category: 'Business', 
+                year: '2025', 
+                organization: 'Resilience Action International',
+                description: 'Support small business development through mentorship, coaching, and practical skills training.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-building mr-2"></i>Organization</h4>
+                        <p>Resilience Action International | 2025 – Present</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-bullseye mr-2"></i>Project Overview</h4>
+                        <p>Support small business development through mentorship, coaching, and practical skills training for entrepreneurs in Kakuma refugee camp and surrounding communities.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-tasks mr-2"></i>Key Services</h4>
+                        <ul>
+                            <li>One-on-one business mentorship and coaching</li>
+                            <li>Business plan development support</li>
+                            <li>Financial literacy training</li>
+                            <li>Market analysis guidance</li>
+                            <li>Business management skills development</li>
+                            <li>Financial sustainability strategies</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-award mr-2"></i>Impact</h4>
+                        <p>Helping entrepreneurs build sustainable businesses that contribute to economic empowerment and community resilience.</p>
+                    </div>
+                `
+            },
+            { 
+                id: 6, 
+                title: 'Academic Studies in Information Systems', 
+                category: 'Education', 
+                year: 'March 2025 – Expected March 2028', 
+                organization: 'Saint Louis University, Missouri (Online)',
+                description: 'Bachelor of Arts in General Studies and Information Systems focusing on business and technology integration.', 
+                content: `
+                    <div class="detail-block">
+                        <h4><i class="fas fa-building mr-2"></i>Institution</h4>
+                        <p>Saint Louis University, Missouri (Online) | March 2025 – Expected March 2028</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-book mr-2"></i>Program Overview</h4>
+                        <p>Bachelor of Arts in General Studies and Information Systems, combining business knowledge with technical expertise in information systems management.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-graduation-cap mr-2"></i>Key Learning Areas</h4>
+                        <ul>
+                            <li>Information Systems Management</li>
+                            <li>Business Studies and Administration</li>
+                            <li>Data Management and Analysis</li>
+                            <li>Technology Integration in Business</li>
+                            <li>Digital Systems and Applications</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-certificate mr-2"></i>Credential</h4>
+                        <p>Bachelor of Arts Degree (Ongoing) - Expected completion March 2028</p>
+                    </div>
+                `
+            }
+        ];
+
+        let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [
+            { id: 1, title: 'Empowering Youth Through Technology', author: 'Dictor Olame', category: 'Technology', excerpt: 'Exploring how digital literacy programs can transform lives in refugee communities.', content: 'Technology has the power to transform lives, especially in underserved communities...', date: '2025-01-15', status: 'published' },
+            { id: 2, title: 'Building Sustainable Businesses in Challenging Environments', author: 'Dictor Olame', category: 'Business', excerpt: 'Lessons learned from supporting entrepreneurs in Kakuma refugee camp.', content: 'Entrepreneurship in humanitarian contexts comes with unique challenges...', date: '2025-01-10', status: 'published' },
+            { id: 3, title: 'Inclusive Education: Making STEM Accessible for All', author: 'Dictor Olame', category: 'Education', excerpt: 'Strategies for creating accessible learning environments for students with disabilities.', content: 'Every student deserves access to quality education...', date: '2025-01-05', status: 'published' }
+        ];
+
+        let messages = JSON.parse(localStorage.getItem('messages')) || [];
+        let subscribers = JSON.parse(localStorage.getItem('subscribers')) || [];
+        let users = JSON.parse(localStorage.getItem('users')) || [
+            { id: 1, username: 'admindictor', email: 'douglasdictor409@gmail.com', role: 'admin', created: '2025-01-01' }
+        ];
+        let settings = JSON.parse(localStorage.getItem('settings')) || {
+            siteTitle: 'Dictor Olame Portfolio',
+            heroImage: '',
+            primaryColor: '#DC2626',
+            contactEmail: 'douglasdictor409@gmail.com'
+        };
+
+        // Initialize
+        function init() {
+            saveData();
+            loadCertifications();
+            loadServices();
+            loadPortfolio();
+            loadBlog();
+            updateStats();
+            updateMessageBadge();
+        }
+
+        function saveData() {
+            localStorage.setItem('services', JSON.stringify(services));
+            localStorage.setItem('portfolio', JSON.stringify(portfolio));
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+            localStorage.setItem('messages', JSON.stringify(messages));
+            localStorage.setItem('subscribers', JSON.stringify(subscribers));
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('settings', JSON.stringify(settings));
+            localStorage.setItem('certifications', JSON.stringify(certifications));
+        }
+
+        // Load Certifications
+        function loadCertifications() {
+            const grid = document.getElementById('certificationsGrid');
+            grid.innerHTML = certifications.map(cert => `
+                <div class="certification-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg mb-2">${cert.title}</h3>
+                            <p class="text-green-600 font-medium">${cert.issuer}</p>
+                            <p class="text-gray-500 text-sm">${cert.date}</p>
+                        </div>
+                        <div class="credential-icon" onclick="viewCredential(${cert.id})">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        ${cert.skills.map(skill => `<span class="badge badge-info">${skill}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadCertificationsTable() {
+            const tbody = document.getElementById('certificationsTableBody');
+            tbody.innerHTML = certifications.map(cert => `
+                <tr>
+                    <td class="font-medium">${cert.title}</td>
+                    <td>${cert.issuer}</td>
+                    <td>${cert.date}</td>
+                    <td>
+                        <button onclick="editCertification(${cert.id})" class="text-blue-600 hover:text-blue-800 mr-3"><i class="fas fa-edit"></i></button>
+                        <button onclick="deleteCertification(${cert.id})" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function viewCredential(id) {
+            const cert = certifications.find(c => c.id === id);
+            if (cert) {
+                document.getElementById('credentialContent').innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="credential-icon w-16 h-16">
+                                <i class="fas fa-certificate text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">${cert.title}</h3>
+                                <p class="text-green-600">${cert.issuer}</p>
+                            </div>
+                        </div>
+                        <div class="detail-block">
+                            <h4><i class="fas fa-calendar mr-2"></i>Issue Date</h4>
+                            <p>${cert.date}</p>
+                        </div>
+                        <div class="detail-block">
+                            <h4><i class="fas fa-id-card mr-2"></i>Credential ID</h4>
+                            <p class="font-mono">${cert.credentialId}</p>
+                        </div>
+                        <div class="detail-block">
+                            <h4><i class="fas fa-tools mr-2"></i>Skills Earned</h4>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                ${cert.skills.map(skill => `<span class="badge badge-success">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="detail-block">
+                            <h4><i class="fas fa-link mr-2"></i>Verify Credential</h4>
+                            <a href="${cert.credentialUrl}" target="_blank" class="btn-primary inline-flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>View Credential
+                            </a>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('credentialModal').classList.add('active');
+            }
+        }
+
+        function closeCredentialModal() {
+            document.getElementById('credentialModal').classList.remove('active');
+        }
+
+        // Certification Modal Functions
+        function openCertificationModal(id = null) {
+            document.getElementById('certificationModal').classList.add('active');
+            if (id) {
+                const cert = certifications.find(c => c.id === id);
+                document.getElementById('certificationModalTitle').textContent = 'Edit Certification';
+                document.getElementById('certificationId').value = cert.id;
+                document.getElementById('certificationTitle').value = cert.title;
+                document.getElementById('certificationIssuer').value = cert.issuer;
+                document.getElementById('certificationDate').value = cert.date;
+                document.getElementById('certificationSkills').value = cert.skills.join(', ');
+                document.getElementById('certificationCredentialId').value = cert.credentialId;
+                document.getElementById('certificationCredentialUrl').value = cert.credentialUrl;
+            } else {
+                document.getElementById('certificationModalTitle').textContent = 'Add Certification';
+                document.getElementById('certificationForm').reset();
+                document.getElementById('certificationId').value = '';
+            }
+        }
+
+        function closeCertificationModal() {
+            document.getElementById('certificationModal').classList.remove('active');
+        }
+
+        function saveCertification(event) {
+            event.preventDefault();
+            const id = document.getElementById('certificationId').value;
+            const skillsString = document.getElementById('certificationSkills').value;
+            const certificationData = {
+                id: id ? parseInt(id) : Date.now(),
+                title: document.getElementById('certificationTitle').value,
+                issuer: document.getElementById('certificationIssuer').value,
+                date: document.getElementById('certificationDate').value,
+                skills: skillsString.split(',').map(s => s.trim()).filter(s => s),
+                credentialId: document.getElementById('certificationCredentialId').value,
+                credentialUrl: document.getElementById('certificationCredentialUrl').value || '#'
+            };
+            
+            if (id) {
+                const index = certifications.findIndex(c => c.id === parseInt(id));
+                certifications[index] = certificationData;
+            } else {
+                certifications.push(certificationData);
+            }
+            
+            saveData();
+            loadCertifications();
+            loadCertificationsTable();
+            updateStats();
+            closeCertificationModal();
+        }
+
+        function editCertification(id) {
+            openCertificationModal(id);
+        }
+
+        function deleteCertification(id) {
+            if (confirm('Are you sure you want to delete this certification?')) {
+                certifications = certifications.filter(c => c.id !== id);
+                saveData();
+                loadCertifications();
+                loadCertificationsTable();
+                updateStats();
+            }
+        }
+
+        // Page Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById('mobileMenu').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Admin Navigation
+        function showAdminPage(pageId) {
+            document.querySelectorAll('.admin-page-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.querySelectorAll('.admin-nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            const contentMap = {
+                'dashboard': 'adminDashboardContent',
+                'services': 'adminServicesContent',
+                'portfolio': 'adminPortfolioContent',
+                'blog': 'adminBlogContent',
+                'certifications': 'adminCertificationsContent',
+                'messages': 'adminMessagesContent',
+                'subscribers': 'adminSubscribersContent',
+                'users': 'adminUsersContent',
+                'settings': 'adminSettingsContent'
+            };
+            
+            document.getElementById(contentMap[pageId]).classList.remove('hidden');
+            event.target.closest('.admin-nav-item').classList.add('active');
+            
+            const titleMap = {
+                'dashboard': 'Dashboard',
+                'services': 'Manage Services',
+                'portfolio': 'Manage Portfolio',
+                'blog': 'Manage Blog Posts',
+                'certifications': 'Manage Certifications',
+                'messages': 'Contact Messages',
+                'subscribers': 'Email Subscribers',
+                'users': 'Manage Users',
+                'settings': 'Site Settings'
+            };
+            
+            document.getElementById('adminPageTitle').textContent = titleMap[pageId];
+            
+            if (pageId === 'services') loadServicesTable();
+            if (pageId === 'portfolio') loadPortfolioTable();
+            if (pageId === 'certifications') loadCertificationsTable();
+            if (pageId === 'blog') loadBlogTable();
+            if (pageId === 'messages') loadMessagesTable();
+            if (pageId === 'subscribers') loadSubscribersTable();
+            if (pageId === 'users') loadUsersTable();
+            if (pageId === 'settings') loadSettings();
+        }
+
+        // Login Handler
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('loginError');
+            
+            if (username === 'admindictor' && password === '@Olame2026') {
+                errorDiv.classList.add('hidden');
+                sessionStorage.setItem('isLoggedIn', 'true');
+                sessionStorage.setItem('currentUser', username);
+                showPage('adminDashboard');
+            } else {
+                errorDiv.classList.remove('hidden');
+            }
+        }
+
+        function handleLogout() {
+            sessionStorage.removeItem('isLoggedIn');
+            sessionStorage.removeItem('currentUser');
+            showPage('home');
+        }
+
+        // Contact Form Handler
+        function submitContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            const subscribe = document.getElementById('subscribeCheckbox').checked;
+            
+            const newMessage = {
+                id: Date.now(),
+                name,
+                email,
+                subject,
+                message,
+                date: new Date().toISOString().split('T')[0],
+                read: false
+            };
+            
+            messages.unshift(newMessage);
+            
+            if (subscribe && !subscribers.find(s => s.email === email)) {
+                subscribers.push({
+                    id: Date.now(),
+                    email,
+                    subscribedDate: new Date().toISOString().split('T')[0],
+                    status: 'active'
+                });
+            }
+            
+            saveData();
+            updateMessageBadge();
+            updateStats();
+            
+            alert('Thank you for your message! I will get back to you soon.');
+            document.getElementById('contactForm').reset();
+        }
+
+        // Newsletter Subscription
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            
+            if (!subscribers.find(s => s.email === email)) {
+                subscribers.push({
+                    id: Date.now(),
+                    email,
+                    subscribedDate: new Date().toISOString().split('T')[0],
+                    status: 'active'
+                });
+                saveData();
+                alert('Thank you for subscribing to my newsletter!');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('You are already subscribed!');
+            }
+        }
+
+        // Load Services
+        function loadServices() {
+            const grid = document.getElementById('servicesGrid');
+            grid.innerHTML = services.map(service => `
+                <div class="card service-card p-8">
+                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="${service.icon} text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">${service.title}</h3>
+                    <p class="text-gray-600 mb-6">${service.description}</p>
+                    <button onclick="openServiceDetailModal(${service.id})" class="btn-primary w-full">
+                        <i class="fas fa-info-circle mr-2"></i>Learn More
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function openServiceDetailModal(id) {
+            const service = services.find(s => s.id === id);
+            if (service) {
+                document.getElementById('serviceDetailTitle').textContent = service.title;
+                document.getElementById('serviceDetailContent').innerHTML = service.content;
+                document.getElementById('serviceDetailModal').classList.add('active');
+            }
+        }
+
+        function closeServiceDetailModal() {
+            document.getElementById('serviceDetailModal').classList.remove('active');
+        }
+
+        function loadServicesTable() {
+            const tbody = document.getElementById('servicesTableBody');
+            tbody.innerHTML = services.map(service => `
+                <tr>
+                    <td class="font-medium">${service.title}</td>
+                    <td><span class="badge badge-info">${service.category}</span></td>
+                    <td><span class="badge badge-success">Active</span></td>
+                    <td>
+                        <button onclick="editService(${service.id})" class="text-blue-600 hover:text-blue-800 mr-3"><i class="fas fa-edit"></i></button>
+                        <button onclick="deleteService(${service.id})" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Load Portfolio
+        function loadPortfolio() {
+            const grid = document.getElementById('portfolioGrid');
+            grid.innerHTML = portfolio.map(item => `
+                <div class="card overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-green-500 flex items-center justify-center">
+                        <i class="fas fa-briefcase text-6xl text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-red-100 text-red-700 rounded-full">${item.category}</span>
+                            <span class="text-gray-500 text-sm">${item.year}</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">${item.title}</h3>
+                        <p class="text-sm text-gray-500 mb-3">${item.organization}</p>
+                        <p class="text-gray-600 mb-4">${item.description}</p>
+                        <button onclick="openPortfolioDetailModal(${item.id})" class="btn-primary w-full">
+                            <i class="fas fa-eye mr-2"></i>View Project
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openPortfolioDetailModal(id) {
+            const item = portfolio.find(p => p.id === id);
+            if (item) {
+                document.getElementById('portfolioDetailTitle').textContent = item.title;
+                document.getElementById('portfolioDetailContent').innerHTML = item.content;
+                document.getElementById('portfolioDetailModal').classList.add('active');
+            }
+        }
+
+        function closePortfolioDetailModal() {
+            document.getElementById('portfolioDetailModal').classList.remove('active');
+        }
+
+        function loadPortfolioTable() {
+            const tbody = document.getElementById('portfolioTableBody');
+            tbody.innerHTML = portfolio.map(item => `
+                <tr>
+                    <td class="font-medium">${item.title}</td>
+                    <td><span class="badge badge-info">${item.category}</span></td>
+                    <td>${item.year}</td>
+                    <td>
+                        <button onclick="editPortfolio(${item.id})" class="text-blue-600 hover:text-blue-800 mr-3"><i class="fas fa-edit"></i></button>
+                        <button onclick="deletePortfolio(${item.id})" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Load Blog
+        function loadBlog() {
+            const grid = document.getElementById('blogGrid');
+            const publishedPosts = blogPosts.filter(post => post.status === 'published');
+            grid.innerHTML = publishedPosts.map(post => `
+                <div class="card overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-newspaper text-6xl text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-green-100 text-green-700 rounded-full">${post.category}</span>
+                            <span class="text-gray-500 text-sm">${post.date}</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">${post.title}</h3>
+                        <p class="text-sm text-gray-500 mb-3">By ${post.author}</p>
+                        <p class="text-gray-600 mb-4">${post.excerpt}</p>
+                        <button onclick="openBlogDetailModal(${post.id})" class="btn-primary w-full">
+                            <i class="fas fa-book-open mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadBlogTable() {
+            const tbody = document.getElementById('blogTableBody');
+            tbody.innerHTML = blogPosts.map(post => `
+                <tr>
+                    <td class="font-medium">${post.title}</td>
+                    <td><span class="badge badge-info">${post.category}</span></td>
+                    <td>${post.date}</td>
+                    <td><span class="badge ${post.status === 'published' ? 'badge-success' : 'badge-warning'}">${post.status}</span></td>
+                    <td>
+                        <button onclick="editBlog(${post.id})" class="text-blue-600 hover:text-blue-800 mr-3"><i class="fas fa-edit"></i></button>
+                        <button onclick="deleteBlog(${post.id})" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Load Messages
+        function loadMessagesTable() {
+            const tbody = document.getElementById('messagesTableBody');
+            tbody.innerHTML = messages.map(msg => `
+                <tr>
+                    <td class="font-medium">${msg.name}</td>
+                    <td>${msg.email}</td>
+                    <td>${msg.subject}</td>
+                    <td>${msg.date}</td>
+                    <td>
+                        <button onclick="viewMessage(${msg.id})" class="text-blue-600 hover:text-blue-800 mr-3"><i class="fas fa-eye"></i></button>
+                        <button onclick="deleteMessage(${msg.id})" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function updateMessageBadge() {
+            const unreadCount = messages.filter(m => !m.read).length;
+            document.getElementById('messageBadge').textContent = unreadCount;
+            document.getElementById('statMessages').textContent = messages.length;
+        }
+
+        function viewMessage(id) {
+            const msg = messages.find(m => m.id === id);
+            if (msg) {
+                msg.read = true;
+                saveData();
+                updateMessageBadge();
+                document.getElementById('messageViewContent').innerHTML = `
+                    <div class="space-y-4">
+                        <div><strong>From:</strong> ${msg.name} (${msg.email})</div>
+                        <div><strong>Subject:</strong> ${msg.subject}</div>
+                        <div><strong>Date:</strong> ${msg.date}</div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><strong>Message:</strong><br>${msg.message}</div>
+                    </div>
+                `;
+                document.getElementById('messageViewModal').classList.add('active');
+            }
+        }
+
+        function closeMessageViewModal() {
+            document.getElementById('messageViewModal').classList.remove('active');
+        }
+
+        // Load Subscribers
+        function loadSubscribersTable() {
+            const tbody = document.getElementById('subscribersTableBody');
+            tbody.innerHTML = subscribers.map(sub => `
+                <tr>
+                    <td>${sub.email}</td>
+                    <td>${sub.subscribedDate}</td>
+                    <td><span class="badge badge-success">${sub.status}</span></td>
+                    <td>
+                        <button onclick="deleteSubscriber(${sub.id})" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Load Users
+        function loadUsersTable() {
+            const tbody = document.getElementById('usersTableBody');
+            tbody.innerHTML = users.map(user => `
+                <tr>
+                    <td class="font-medium">${user.username}</td>
+                    <td><span class="badge ${user.role === 'admin' ? 'badge-danger' : 'badge-info'}">${user.role}</span></td>
+                    <td>${user.email}</td>
+                    <td>${user.created}</td>
+                    <td>
+                        <button onclick="editUser(${user.id})" class="text-blue-600 hover:text-blue-800 mr-3"><i class="fas fa-edit"></i></button>
+                        ${user.username !== 'admindictor' ? `<button onclick="deleteUser(${user.id})" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>` : ''}
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Load Settings
+        function loadSettings() {
+            document.getElementById('settingSiteTitle').value = settings.siteTitle;
+            document.getElementById('settingHeroImage').value = settings.heroImage;
+            document.getElementById('settingPrimaryColor').value = settings.primaryColor;
+            document.getElementById('settingContactEmail').value = settings.contactEmail;
+        }
+
+        function saveSettings(event) {
+            event.preventDefault();
+            settings.siteTitle = document.getElementById('settingSiteTitle').value;
+            settings.heroImage = document.getElementById('settingHeroImage').value;
+            settings.primaryColor = document.getElementById('settingPrimaryColor').value;
+            settings.contactEmail = document.getElementById('settingContactEmail').value;
+            saveData();
+            alert('Settings saved successfully!');
+        }
+
+        function handleHeroImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    settings.heroImage = e.target.result;
+                    saveData();
+                    document.getElementById('heroImagePreview').classList.remove('hidden');
+                    document.getElementById('heroImagePreviewImg').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Update Stats
+        function updateStats() {
+            document.getElementById('statServices').textContent = services.length;
+            document.getElementById('statPortfolio').textContent = portfolio.length;
+            document.getElementById('statCertifications').textContent = certifications.length;
+            document.getElementById('statBlog').textContent = blogPosts.filter(p => p.status === 'published').length;
+            document.getElementById('statMessages').textContent = messages.length;
+            
+            const recentMessages = document.getElementById('recentMessages');
+            recentMessages.innerHTML = messages.slice(0, 5).map(msg => `
+                <div class="p-3 bg-gray-50 rounded-lg ${!msg.read ? 'border-l-4 border-green-600' : ''}">
+                    <p class="font-medium text-sm">${msg.name}</p>
+                    <p class="text-xs text-gray-500">${msg.subject}</p>
+                </div>
+            `).join('') || '<p class="text-gray-500 text-sm">No messages yet</p>';
+        }
+
+        // Service Modal Functions
+        function openServiceModal(id = null) {
+            document.getElementById('serviceModal').classList.add('active');
+            if (id) {
+                const service = services.find(s => s.id === id);
+                document.getElementById('serviceModalTitle').textContent = 'Edit Service';
+                document.getElementById('serviceId').value = service.id;
+                document.getElementById('serviceTitle').value = service.title;
+                document.getElementById('serviceIcon').value = service.icon;
+                document.getElementById('serviceCategory').value = service.category;
+                document.getElementById('serviceDescription').value = service.description;
+                document.getElementById('serviceContent').value = service.content;
+            } else {
+                document.getElementById('serviceModalTitle').textContent = 'Add Service';
+                document.getElementById('serviceForm').reset();
+                document.getElementById('serviceId').value = '';
+            }
+        }
+
+        function closeServiceModal() {
+            document.getElementById('serviceModal').classList.remove('active');
+        }
+
+        function saveService(event) {
+            event.preventDefault();
+            const id = document.getElementById('serviceId').value;
+            const serviceData = {
+                id: id ? parseInt(id) : Date.now(),
+                title: document.getElementById('serviceTitle').value,
+                icon: document.getElementById('serviceIcon').value || 'fas fa-briefcase',
+                category: document.getElementById('serviceCategory').value,
+                description: document.getElementById('serviceDescription').value,
+                content: document.getElementById('serviceContent').value
+            };
+            
+            if (id) {
+                const index = services.findIndex(s => s.id === parseInt(id));
+                services[index] = serviceData;
+            } else {
+                services.push(serviceData);
+            }
+            
+            saveData();
+            loadServices();
+            loadServicesTable();
+            updateStats();
+            closeServiceModal();
+        }
+
+        function editService(id) {
+            openServiceModal(id);
+        }
+
+        function deleteService(id) {
+            if (confirm('Are you sure you want to delete this service?')) {
+                services = services.filter(s => s.id !== id);
+                saveData();
+                loadServices();
+                loadServicesTable();
+                updateStats();
+            }
+        }
+
+        // Portfolio Modal Functions
+        function openPortfolioModal(id = null) {
+            document.getElementById('portfolioModal').classList.add('active');
+            if (id) {
+                const item = portfolio.find(p => p.id === id);
+                document.getElementById('portfolioModalTitle').textContent = 'Edit Portfolio';
+                document.getElementById('portfolioId').value = item.id;
+                document.getElementById('portfolioTitle').value = item.title;
+                document.getElementById('portfolioCategory').value = item.category;
+                document.getElementById('portfolioYear').value = item.year;
+                document.getElementById('portfolioOrganization').value = item.organization;
+                document.getElementById('portfolioDescription').value = item.description;
+                document.getElementById('portfolioContent').value = item.content;
+            } else {
+                document.getElementById('portfolioModalTitle').textContent = 'Add Portfolio';
+                document.getElementById('portfolioForm').reset();
+                document.getElementById('portfolioId').value = '';
+            }
+        }
+
+        function closePortfolioModal() {
+            document.getElementById('portfolioModal').classList.remove('active');
+        }
+
+        function savePortfolio(event) {
+            event.preventDefault();
+            const id = document.getElementById('portfolioId').value;
+            const portfolioData = {
+                id: id ? parseInt(id) : Date.now(),
+                title: document.getElementById('portfolioTitle').value,
+                category: document.getElementById('portfolioCategory').value,
+                year: document.getElementById('portfolioYear').value,
+                organization: document.getElementById('portfolioOrganization').value,
+                description: document.getElementById('portfolioDescription').value,
+                content: document.getElementById('portfolioContent').value
+            };
+            
+            if (id) {
+                const index = portfolio.findIndex(p => p.id === parseInt(id));
+                portfolio[index] = portfolioData;
+            } else {
+                portfolio.push(portfolioData);
+            }
+            
+            saveData();
+            loadPortfolio();
+            loadPortfolioTable();
+            updateStats();
+            closePortfolioModal();
+        }
+
+        function editPortfolio(id) {
+            openPortfolioModal(id);
+        }
+
+        function deletePortfolio(id) {
+            if (confirm('Are you sure you want to delete this portfolio item?')) {
+                portfolio = portfolio.filter(p => p.id !== id);
+                saveData();
+                loadPortfolio();
+                loadPortfolioTable();
+                updateStats();
+            }
+        }
+
+        // Blog Modal Functions
+        function openBlogModal(id = null) {
+            document.getElementById('blogModal').classList.add('active');
+            if (id) {
+                const post = blogPosts.find(p => p.id === id);
+                document.getElementById('blogModalTitle').textContent = 'Edit Blog Post';
+                document.getElementById('blogId').value = post.id;
+                document.getElementById('blogTitle').value = post.title;
+                document.getElementById('blogAuthor').value = post.author;
+                document.getElementById('blogCategory').value = post.category;
+                document.getElementById('blogExcerpt').value = post.excerpt;
+                document.getElementById('blogContent').value = post.content;
+                document.getElementById('blogStatus').value = post.status;
+            } else {
+                document.getElementById('blogModalTitle').textContent = 'Add Blog Post';
+                document.getElementById('blogForm').reset();
+                document.getElementById('blogId').value = '';
+                document.getElementById('blogAuthor').value = 'Dictor Olame';
+                document.getElementById('blogStatus').value = 'published';
+            }
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blogModal').classList.remove('active');
+        }
+
+        function saveBlog(event) {
+            event.preventDefault();
+            const id = document.getElementById('blogId').value;
+            const blogData = {
+                id: id ? parseInt(id) : Date.now(),
+                title: document.getElementById('blogTitle').value,
+                author: document.getElementById('blogAuthor').value,
+                category: document.getElementById('blogCategory').value,
+                excerpt: document.getElementById('blogExcerpt').value,
+                content: document.getElementById('blogContent').value,
+                status: document.getElementById('blogStatus').value,
+                date: new Date().toISOString().split('T')[0]
+            };
+            
+            if (id) {
+                const index = blogPosts.findIndex(p => p.id === parseInt(id));
+                blogPosts[index] = blogData;
+            } else {
+                blogPosts.push(blogData);
+            }
+            
+            saveData();
+            loadBlog();
+            loadBlogTable();
+            updateStats();
+            closeBlogModal();
+        }
+
+        function editBlog(id) {
+            openBlogModal(id);
+        }
+
+        function deleteBlog(id) {
+            if (confirm('Are you sure you want to delete this blog post?')) {
+                blogPosts = blogPosts.filter(p => p.id !== id);
+                saveData();
+                loadBlog();
+                loadBlogTable();
+                updateStats();
+            }
+        }
+
+        function openBlogDetailModal(id) {
+            const post = blogPosts.find(p => p.id === id);
+            document.getElementById('portfolioDetailTitle').textContent = post.title;
+            document.getElementById('portfolioDetailContent').innerHTML = `
+                <div class="space-y-4">
+                    <p><strong>Author:</strong> ${post.author}</p>
+                    <p><strong>Category:</strong> ${post.category}</p>
+                    <p><strong>Date:</strong> ${post.date}</p>
+                    <p class="text-lg">${post.content}</p>
+                </div>
+            `;
+            document.getElementById('portfolioDetailModal').classList.add('active');
+        }
+
+        // User Modal Functions
+        function openUserModal(id = null) {
+            document.getElementById('userModal').classList.add('active');
+            if (id) {
+                const user = users.find(u => u.id === id);
+                document.getElementById('userModalTitle').textContent = 'Edit User';
+                document.getElementById('userId').value = user.id;
+                document.getElementById('userUsername').value = user.username;
+                document.getElementById('userEmail').value = user.email;
+                document.getElementById('userRole').value = user.role;
+                document.getElementById('userPassword').value = '';
+            } else {
+                document.getElementById('userModalTitle').textContent = 'Add User';
+                document.getElementById('userForm').reset();
+                document.getElementById('userId').value = '';
+            }
+        }
+
+        function closeUserModal() {
+            document.getElementById('userModal').classList.remove('active');
+        }
+
+        function saveUser(event) {
+            event.preventDefault();
+            const id = document.getElementById('userId').value;
+            const userData = {
+                id: id ? parseInt(id) : Date.now(),
+                username: document.getElementById('userUsername').value,
+                email: document.getElementById('userEmail').value,
+                role: document.getElementById('userRole').value,
+                created: id ? users.find(u => u.id === parseInt(id)).created : new Date().toISOString().split('T')[0]
+            };
+            
+            if (id) {
+                const index = users.findIndex(u => u.id === parseInt(id));
+                users[index] = userData;
+            } else {
+                users.push(userData);
+            }
+            
+            saveData();
+            loadUsersTable();
+            closeUserModal();
+        }
+
+        function editUser(id) {
+            openUserModal(id);
+        }
+
+        function deleteUser(id) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                users = users.filter(u => u.id !== id);
+                saveData();
+                loadUsersTable();
+            }
+        }
+
+        // Delete Functions
+        function deleteMessage(id) {
+            if (confirm('Are you sure you want to delete this message?')) {
+                messages = messages.filter(m => m.id !== id);
+                saveData();
+                loadMessagesTable();
+                updateMessageBadge();
+                updateStats();
+            }
+        }
+
+        function deleteSubscriber(id) {
+            if (confirm('Are you sure you want to remove this subscriber?')) {
+                subscribers = subscribers.filter(s => s.id !== id);
+                saveData();
+                loadSubscribersTable();
+            }
+        }
+
+        // Export Functions
+        function exportSubscribersCSV() {
+            const csv = 'Email,Subscribed Date,Status\n' + subscribers.map(s => 
+                `${s.email},${s.subscribedDate},${s.status}`
+            ).join('\n');
+            
+            downloadCSV(csv, 'subscribers.csv');
+        }
+
+        function exportMessagesCSV() {
+            const csv = 'Name,Email,Subject,Date,Message\n' + messages.map(m => 
+                `"${m.name}","${m.email}","${m.subject}","${m.date}","${m.message.replace(/"/g, '""')}"`
+            ).join('\n');
+            
+            downloadCSV(csv, 'messages.csv');
+        }
+
+        function downloadCSV(csv, filename) {
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Close modals on outside click
+        document.getElementById('serviceDetailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeServiceDetailModal();
+        });
+
+        document.getElementById('portfolioDetailModal').addEventListener('click', function(e) {
+            if (e.target === this) closePortfolioDetailModal();
+        });
+
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) closeServiceModal();
+        });
+
+        document.getElementById('portfolioModal').addEventListener('click', function(e) {
+            if (e.target === this) closePortfolioModal();
+        });
+
+        document.getElementById('certificationModal').addEventListener('click', function(e) {
+            if (e.target === this) closeCertificationModal();
+        });
+
+        document.getElementById('blogModal').addEventListener('click', function(e) {
+            if (e.target === this) closeBlogModal();
+        });
+
+        document.getElementById('userModal').addEventListener('click', function(e) {
+            if (e.target === this) closeUserModal();
+        });
+
+        document.getElementById('messageViewModal').addEventListener('click', function(e) {
+            if (e.target === this) closeMessageViewModal();
+        });
+
+        document.getElementById('credentialModal').addEventListener('click', function(e) {
+            if (e.target === this) closeCredentialModal();
+        });
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeServiceDetailModal();
+                closePortfolioDetailModal();
+                closeServiceModal();
+                closePortfolioModal();
+                closeCertificationModal();
+                closeBlogModal();
+                closeUserModal();
+                closeMessageViewModal();
+                closeCredentialModal();
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>
+
